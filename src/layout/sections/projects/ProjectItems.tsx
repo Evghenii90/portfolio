@@ -10,20 +10,22 @@ type ProjectItemsPropsType = {
 export const ProjectItems = (props: ProjectItemsPropsType) => {
     return (
         <StyledWork>
-            <Image src={props.src} alt=""/>
-            <Title>{props.title}</Title>
-            <Text>{props.text}</Text>
-            <Text>{props.subtext}</Text>
-            <Box>
-                <Link href="/">
-                    <Icon iconId={"link-chain"} width={"20"} height={"20"} viewBox={"0 0 20 20"}/>
-                    <a>Live Preview</a>
-                </Link>
-                <Link href="/">
-                    <Icon iconId={"link-github"} width={"20"} height={"20"} viewBox={"0 0 20 20"}/>
-                    <a>View Code</a>
-                </Link>
-            </Box>
+            <Image src={props.src} alt="image"/>
+            <BoxText>
+                <Title>{props.title}</Title>
+                <Text>{props.text}</Text>
+                <SubText>{props.subtext}</SubText>
+            </BoxText>
+                <Box>
+                    <Link href="/">
+                        <Icon iconId={"link-chain"} width={"20"} height={"20"} viewBox={"0 0 20 20"}/>
+                        <a>Live Preview</a>
+                    </Link>
+                    <Link href="/">
+                        <Icon iconId={"link-github"} width={"20"} height={"20"} viewBox={"0 0 20 20"}/>
+                        <a>View Code</a>
+                    </Link>
+                </Box>
         </StyledWork>
     );
 };
@@ -31,10 +33,15 @@ export const ProjectItems = (props: ProjectItemsPropsType) => {
 const StyledWork = styled.div`
     max-width: 373px;
     width: 100%;
-    margin: 10px;
-    border-radius:20px;;
+    margin-bottom: 62px;
+    border-radius: 20px;;
     box-shadow: 2px 2px 100px 0 rgba(0, 0, 0, 0.2);
-    background: #363636;
+    background: #fff;
+    
+`
+const BoxText = styled.div`
+    padding: 27px 30px 0;
+    color: #ccc;
 `
 const Image = styled.img`
     width: 100%;
@@ -44,22 +51,37 @@ const Image = styled.img`
 `
 const Box = styled.div`
     display: flex;
+    justify-content: space-between;
+    padding: 9px 30px 25px;
     
 `
 const Link = styled.a`
-    margin: 5px;
-    padding: 10px;
-    text-decoration: none;
-    display: flex;
-    a{margin-left: 5px ;}
-    color: #fff;
     
+    display: flex;
+    gap: 5px;
+
+    font-weight: 400;
+    font-size: 16px;
+    
+    color: #000;
 `
 const Title = styled.h3`
-    padding: 10px;
-    color: #ccc;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 0.92857;
+    
+    color: #000;
+    padding-bottom: 12px;
 `
 const Text = styled.p`
-    padding: 10px;
-    color: #ccc;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.44444;
+    color: #666;
+    
+`
+const SubText = styled.p`
+    padding: 12px 0;
+    color: #42446e;
+    font-size: 14px;
 `

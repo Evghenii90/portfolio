@@ -5,5 +5,6 @@ export const SectionText = styled.p`
     font-size: 32px;
     line-height: 0.8125;
     text-align: center;
-    color: #a7a7a7;
+    color: #666;
+    padding-bottom: 125px ;
 `

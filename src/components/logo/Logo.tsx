@@ -1,22 +1,25 @@
 import styled from "styled-components";
+import logo from "./../../assets/images/icon-development.png"
 
 
 export const Logo = () => {
     return (
             <StyledLogo>
                 <a href={"#"}>
-                    <span>HOME</span>
+                    <img src={logo} alt="logo"/>
                 </a>
             </StyledLogo>
         )
 };
 
 const StyledLogo = styled.div`
-a{
-    padding: 10px;
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-}
+    img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        background-color: #fff;
+        //border-radius: 5px;
+        margin: 10px;
+    }
 `
 

@@ -14,16 +14,14 @@ export const Menu = (props: {menuItems:Array<string>}) => {
 };
 
 const StyledMenu = styled.nav`
+    flex-grow: 1;
+    
     ul {
         display: flex;
-        gap: 30px;
-        list-style: none;
-        padding-left: 0;
+        gap: 50px;
+        justify-content: flex-end;
     }
     li>a{
-        text-decoration: none;
-        text-align: center;
-        font-weight: 400;
         font-size: 18px;
         line-height: 1.44444;
         color: #a7a7a7;

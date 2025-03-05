@@ -12,10 +12,12 @@ export const FooterBottom = () => {
 };
 
 const StyledFooterBottom = styled.div`
-    background-color: #000000;
     color: #ccc;
+    padding-top: 45px;
+    ul{justify-content: center;}
 p{
     text-align: center;
+    padding: 10px 0;
 }
 
 `

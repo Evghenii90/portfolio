@@ -8,7 +8,7 @@ export const LinkIcon = () => {
                 <Icon iconId={"headerGitHub"} width={"30"} height={"30"} viewBox={"0 0 30 30"}/>
             </a>
             <a href={"#"}>
-                <Icon iconId={"headerTwitter"} width={"30"} height={"30"} viewBox={"0 0 31 31"}/>
+                <Icon iconId={"headerTwitter"} width={"30"} height={"30"} viewBox={"1 1 31 31"}/>
             </a>
             <a href={"#"}>
                 <Icon iconId={"headerIn"} width={"30"} height={"30"} viewBox={"0 0 30 30"}/>
@@ -21,7 +21,7 @@ const StyledLinkIcon = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    a {
-        margin: 5px
-    };
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 51px;
 `

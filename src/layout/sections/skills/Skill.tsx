@@ -1,33 +1,45 @@
 import styled from "styled-components";
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
-import {SkillIcon} from "./SkillIcon.tsx";
 import {SectionText} from "../../../components/SectionText.tsx";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
+import {Icon} from "../../../components/icons/Icon.tsx";
+import {Container} from "../../../components/Container.tsx";
+import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 
 
 export const Skill = () => {
     return (
         <StyledSkill>
-            <SectionTitle>My Tech Stack</SectionTitle>
-            <SectionText> Technologies I’ve been working with recently</SectionText>
-            <FlexWrapper direction={"row"} wrap={"wrap"} align={"center"} justify={"space-around"}>
-                <SkillIcon iconId={"html"} />
-                <SkillIcon iconId={"css"}/>
-                <SkillIcon iconId={"js"}/>
-                <SkillIcon iconId={"github"}/>
-                <SkillIcon iconId={"git"}/>
-                <SkillIcon iconId={"bootstrap"}/>
-                <SkillIcon iconId={"tailwind"}/>
-                <SkillIcon iconId={"vscode"}/>
-                <SkillIcon iconId={"react"}/>
-                <SkillIcon iconId={"redux"}/>
-            </FlexWrapper>
+            <Container>
+                <FlexWrapper direction="column" wrap={"wrap"} align={"center"} justify={"center"}>
+                    <SectionTitle>My Tech Stack</SectionTitle>
+                    <SectionText> Technologies I’ve been working with recently</SectionText>
+                    <Icons>
+                        <Icon iconId={"html"} />
+                        <Icon iconId={"css"}/>
+                        <Icon iconId={"js"}/>
+                        <Icon iconId={"github"} viewBox={"-16 -16 120 120"}/>
+                        <Icon iconId={"git"} viewBox={"0 -8 120 120"}/>
+                        <Icon iconId={"bootstrap"} viewBox={"-16 -16 120 120"}/>
+                        <Icon iconId={"tailwind"} viewBox={"7 10 120 120"}/>
+                        <Icon iconId={"vscode"} viewBox={"0 -5 120 120"}/>
+                        <Icon iconId={"react"} viewBox={"0 -8 120 120"}/>
+                        <Icon iconId={"redux"} viewBox={"0 -8 120 120"}/>
+                    </Icons>
+                </FlexWrapper>
+            </Container>
         </StyledSkill>
     );
 };
 
 const StyledSkill = styled.section`
-background-color: #000000;
-    min-height: 50vh;
-    padding-top: 100px;
+    min-height: 557px;
+    margin-top: 20px;
+`
+const Icons = styled.div`
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+        gap: 105px;
+    
 `
