@@ -9,7 +9,6 @@ import {theme} from "../../../components/styles/Theme.tsx";
 
 export const Contact = () => {
     const formRef = useRef<HTMLFormElement>(null);
-
     const sendEmail = (e:any) => {
         e.preventDefault();
 

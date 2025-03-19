@@ -164,7 +164,7 @@ const NavLink = styled(Link)`
     }
 
     &:hover::after,
-    &:hover::before, &.active {
+    &:hover::before{
         transform: scaleX(1);
     }
 `
