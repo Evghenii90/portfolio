@@ -31,9 +31,6 @@ const StyledHeader = styled.header`
     left: 0;
     right: 0;
     z-index: 99999;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для лучшего визуального разделения */
-    backdrop-filter: blur(10px); /* Размытие фона для эффекта "матового стекла" */
-
     
     @media screen and (max-width: 992px) {
         ${Container} {

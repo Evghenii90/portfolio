@@ -51,6 +51,7 @@ const StyledMobileMenu = styled.nav`
     display: none;
     @media ${theme.media.desktop} {
         display: block;
+        //overflow: visible;
     }
 `
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
@@ -62,11 +63,13 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     z-index: 999999;
     background-color: rgba(175, 173, 173, 0.9);
     display: none;
+    
 
     ${props => props.isOpen && css<{ isOpen: boolean }>`
         display: flex;
         justify-content: center;
         align-items: center;
+        
 
         ${NavLink} {
             color: ${theme.colors.color1};

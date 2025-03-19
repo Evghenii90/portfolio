@@ -32,7 +32,7 @@ const StyledMain = styled.section`
     min-height: 50vh;
     width: 100%;
     display: flex;
-    overflow: clip;
+    //overflow: clip;
 
     ${Container} {
         position: relative;

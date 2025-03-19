@@ -49,7 +49,7 @@ const StyledAboutWorkEducation = styled.section`
     display: flex;
     min-height: 80vh;
     position: relative;
-    overflow: clip;
+    //overflow: clip;
 
     ${Container} {
         & > svg {
