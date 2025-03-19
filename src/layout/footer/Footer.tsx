@@ -17,7 +17,7 @@ export const Footer = () => {
                         </ContactElem>
                         <ContactElem>
                             <Icon iconId={"footerMail"} width={"30"} height={"30"} viewBox={"-2 -2 15 15"}/>
-                            <a href="mailto:shadow_9009@mail.ru"><span>shadow_9009@mail.ru</span></a>
+                            <a href="mailto:evghenii481@gmail.com"><span>evghenii481@gmail.com</span></a>
 
                         </ContactElem>
                         <ContactElem>
