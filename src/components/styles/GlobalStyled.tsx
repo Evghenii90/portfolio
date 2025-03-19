@@ -1,5 +1,5 @@
 import {createGlobalStyle} from "styled-components";
-import {theme} from "./Theme.tsx";
+
 
 export const GlobalStyled =createGlobalStyle`
     /*Обнуление*/
@@ -8,6 +8,9 @@ export const GlobalStyled =createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+    html{
+        font-size: 10px;
     }
     body {
         margin: 0;
@@ -29,20 +32,19 @@ export const GlobalStyled =createGlobalStyle`
     }
     // цвета
     header,section,footer{
-    background-color: ${theme.colors.primaryBg};
-        
+    background-color: white;
+        //border: 1px solid red;
     }
     
     section {
         padding: 100px 0;
     }
-
-    // section:nth-of-type(odd){
-    //     background-color: ${theme.colors.primaryBg};
-    // }
-    // section:nth-of-type(even){
-    //     background-color: ${theme.colors.secondaryBg};
-    // }
+    @media screen and (max-width: 992px) {
+        section {
+            padding: 50px 0;
+        }
+    }
+    
     
     
 `

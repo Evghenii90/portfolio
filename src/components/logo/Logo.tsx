@@ -1,25 +1,42 @@
 import styled from "styled-components";
-import logo from "./../../assets/images/icon-development.png"
-
+import {theme} from "../styles/Theme.tsx";
+// import iconsSprite from "../../assets/images/icons-sprite.svg";
+import {animateScroll as scroll} from "react-scroll";
 
 export const Logo = () => {
     return (
-            <StyledLogo>
-                <a href={"#"}>
-                    <img src={logo} alt="logo"/>
-                </a>
-            </StyledLogo>
-        )
+        <StyledLogo>
+            <a onClick={() => {
+                scroll.scrollToTop({behavior: "smooth"});
+            }}>
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_84343_1795)">
+                        <path
+                            d="M40 0C32.0888 0 24.3552 2.34596 17.7772 6.74121C11.1992 11.1365 6.07234 17.3836 3.04484 24.6927C0.0173314 32.0017 -0.774802 40.0444 0.768607 47.8036C2.31202 55.5628 6.12165 62.6902 11.7157 68.2843C17.3098 73.8784 24.4372 77.688 32.1964 79.2314C39.9556 80.7748 47.9983 79.9827 55.3074 76.9552C62.6164 73.9277 68.8635 68.8008 73.2588 62.2228C77.6541 55.6448 80 47.9112 80 40C80 29.3913 75.7857 19.2172 68.2843 11.7157C60.7828 4.21427 50.6087 0 40 0ZM39.1267 12.26H47.74C47.9162 12.2602 48.09 12.3012 48.2477 12.3796C48.4055 12.4581 48.543 12.5719 48.6495 12.7123C48.756 12.8527 48.8286 13.0158 48.8616 13.1888C48.8947 13.3619 48.8873 13.5403 48.84 13.71L42.0734 36.77L48.4234 34.83L47.0634 39.4467L40.65 41.3133L36.49 55.36H58.7433C58.9197 55.361 59.0935 55.4027 59.251 55.482C59.4086 55.5613 59.5457 55.6759 59.6515 55.817C59.7574 55.958 59.8292 56.1217 59.8613 56.2951C59.8935 56.4685 59.885 56.647 59.8367 56.8167L57.8967 63.4833C57.8033 63.8002 57.6101 64.0785 57.3459 64.2767C57.0816 64.4749 56.7604 64.5824 56.43 64.5833H22.4433L28.1867 45.1767L21.8334 47.11L23.2333 42.5733L29.6 40.64L37.6734 13.3733C37.7619 13.0545 37.952 12.7733 38.2149 12.5723C38.4778 12.3714 38.7991 12.2617 39.13 12.26"
+                            fill="currentColor"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_84343_1795">
+                            <rect width="80" height="80" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </a>
+        </StyledLogo>
+    )
 };
 
 const StyledLogo = styled.div`
-    img {
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-        background-color: #fff;
-        //border-radius: 5px;
-        margin: 10px;
+    @media ${theme.media.desktop} {
+        display: none;
+    }
+
+    svg > g > path {
+        fill: #666666;
+    }
+
+    svg > g > path:hover{
+        fill: #13b0f5;
     }
 `
 

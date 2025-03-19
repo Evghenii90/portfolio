@@ -1,0 +1,29 @@
+.alice-carousel__dots{
+margin: 0;
+}
+
+.alice-carousel__dots-item:not(.__custom){
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #42446e;
+}
+
+.alice-carousel__dots-item:not(.__custom):not(:last-child) {
+    margin-right: 5px;
+}
+
+.alice-carousel__dots-item:not(.__custom):hover{
+    background: linear-gradient(90deg, #13b0f5 2.6%, #e70faa 100%);
+}
+
+.alice-carousel__dots-item:not(.__custom).__active {
+    background: linear-gradient(90deg, #13b0f5 2.6%, #e70faa 100%);
+    width: 30px;
+}
+
+.alice-carousel__prev-btn-item,
+.alice-carousel__next-btn-item {
+    display: none;
+}

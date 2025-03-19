@@ -10,10 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@types/react-scroll": "^1.8.10",
     "@types/styled-components": "^5.1.34",
+    "@vitejs/plugin-react": "^4.3.4",
+    "babel-plugin-styled-components": "^2.1.4",
     "react": "^19.0.0",
+    "react-alice-carousel": "^2.9.1",
     "react-dom": "^19.0.0",
-    "styled-components": "^6.1.15"
+    "react-parallax-tilt": "^1.7.286",
+    "react-scroll": "^1.9.3",
+    "react-tsparticles": "^2.12.2",
+    "styled-components": "^6.1.15",
+    "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

@@ -7,23 +7,20 @@ import {Icon} from "../../../components/icons/Icon.tsx";
 
 export const Main = () => {
     return (
-        <StyledMain>
+        <StyledMain id={"home"}>
             <Container>
                 <FlexWrapper align={"center"} justify={"space-between"} wrap={"wrap"}>
-                    <div>
-                        <SmallText>Hi</SmallText>
+                    <TextContainer>
+                        <SmallText >Hi &#128075;</SmallText>
                         <MainSubtitle>My name is <span>Evgeniy</span></MainSubtitle>
                         <MainTitle>A Web Developer.</MainTitle>
-                    </div>
-                    <Position>
+                    </TextContainer>
+
                         <PhotoContainer>
                             <Photo src={photo} alt="photo"/>
                         </PhotoContainer>
-                        <Elem>
-                            <Icon iconId={"abstract"} width={"628"} height={"628"} viewBox={"0 0 628 628"}/>
-                        </Elem>
-                    </Position>
 
+                    <Icon iconId={"abstract"} width={"628"} height={"628"} viewBox={"0 0 628 628"}/>
                 </FlexWrapper>
             </Container>
         </StyledMain>
@@ -31,52 +28,146 @@ export const Main = () => {
 };
 
 const StyledMain = styled.section`
-    margin-top: 200px;
+    padding-top: 260px;
     min-height: 50vh;
     width: 100%;
     display: flex;
-    position: relative;
-    div {
-        text-align: left;
+    overflow: clip;
+
+    ${Container} {
+        position: relative;
+
+        svg {
+            position: absolute;
+            top: -145px;
+            right: -130px;
+            transform: rotate(180deg);
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        ${Container} {
+            svg {
+                display: none;
+            }
+        };
+        ${FlexWrapper} {
+            gap: 50px;
+        }
+    }
+    @media screen and (max-width: 992px) {
+        ${FlexWrapper} {
+            flex-direction: column;
+            justify-items: start;
+            align-items: center;
+        }
+        padding-top: 150px;
+    }
+    @media screen and (max-width: 1200px) {
+        ${FlexWrapper} {
+            justify-content: center;
+        }
+    }
+
+`
+const TextContainer = styled.div`
+    text-align: left;
+    @keyframes typing {
+        from {
+            width: 0
+        }
+        to {
+            width: 100%
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        &{
+            padding-bottom: 40px;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        &{
+            padding-bottom: 30px;
+        }
     }
     
 `
+
 const SmallText = styled.span`
     font-weight: 700;
-    font-size: 58px;
-    line-height: 1.2069;
+    font-size: 5.8rem;
+    line-height: 1.2;
     letter-spacing: -0.02em;
-    color: ${theme.colors.fonts.fontTitle};
+    color: ${theme.colors.color1};
+
+    & {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+        animation: typing 1s forwards;
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 4rem;
+    }
+    @media screen and (max-width: 450px) {
+        font-size: 2.5rem;
+    }
 `
 
 const MainTitle = styled.h1`
     font-weight: 700;
-    font-size: 58px;
-    line-height: 1.2069;
+    font-size: 5.8rem;
+    line-height: 1.2;
     letter-spacing: -0.02em;
-    color: ${theme.colors.fonts.fontTitle};
+    color: ${theme.colors.color1};
 
-
+    & {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+        animation: typing 3s  forwards infinite;
+        animation-delay: 3s;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 4rem;
+    }
+    @media screen and (max-width: 450px) {
+        font-size: 2.5rem;
+    }
 `
-const MainSubtitle = styled.h2`
+const MainSubtitle = styled.div`
     font-weight: 700;
-    font-size: 58px;
-    line-height: 1.2069;
+    font-size: 5.8rem;
+    line-height: 1.2;
     letter-spacing: -0.02em;
-    color: ${theme.colors.fonts.fontTitle};
-
+    color: ${theme.colors.color1};
     span {
         background: linear-gradient(90deg, #13b0f5 2.6%, #e70faa 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+    & {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+        animation: typing 1s steps(25, end) forwards;
+        animation-delay: 2s;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 4rem;
+    }
+    @media screen and (max-width: 450px) {
+        font-size: 2.5rem;
+    }
 `
-const Position = styled.div`
-    position: relative;
-`
+
+// <---------------------------->
 const PhotoContainer = styled.div`
-    
     width: 349px;
     height: 349px;
     border-radius: 50%;
@@ -85,6 +176,14 @@ const PhotoContainer = styled.div`
     align-items: center;
     justify-content: center;
     background: linear-gradient(180deg, #E70FAA 0%, #00C0FD 100%);
+    @media screen and (max-width: 768px) {
+        width: 300px;
+        height: 300px;
+    }
+    @media screen and (max-width: 450px) {
+        width: 250px;
+        height: 250px;
+    }
 `
 
 const Photo = styled.img`
@@ -92,14 +191,11 @@ const Photo = styled.img`
     height: 90%;
     border-radius: 50%;
     object-fit: cover;
+    z-index: 1;
 
     &:hover {
-        border: 5px solid #3776c6;
+        //border: 5px solid #3776c6;
+        transform: scale3d(105%, 105%, 0.5);
     }
-`
-const Elem = styled.div`
-    position: absolute;
-    transform: rotate(180deg);
-    top: -40%;
-    right: -40%;
+
 `

@@ -12,11 +12,11 @@ const links = [
     },
 ];
 
-export const LinkIcon = () => {
+export const LinkIconFooter = () => {
 
 
     return (
-        <StyledLinkIcon>
+        <StyledLinkIconFooter>
             {links.map((link, index) => (
                 <a target="_blank"
                    rel="noopener noreferrer"
@@ -30,16 +30,15 @@ export const LinkIcon = () => {
                     />
                 </a>
             ))}
-        </StyledLinkIcon>
+        </StyledLinkIconFooter>
     );
 };
 
-const StyledLinkIcon = styled.div`
+const StyledLinkIconFooter = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding-left: 51px;
+    gap: 30px;
 
     & > a {
         color: #666666;

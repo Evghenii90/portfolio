@@ -4,70 +4,119 @@ import {WorkExp} from "./WorkExp.tsx";
 import {Education} from "./Education.tsx";
 import {Container} from "../../../components/Container.tsx";
 import {Icon} from "../../../components/icons/Icon.tsx";
+import {theme} from "../../../components/styles/Theme.tsx";
+import {SectionTitle} from "../../../components/SectionTitle.tsx";
 
 
 export const AboutWorkEducation = () => {
     return (
-        <StyledAboutWorkEducation>
+        <StyledAboutWorkEducation id={"about"}>
             <Container>
-                <AboutContainer>
+                <AboutWrapper>
                     <About/>
 
-                    <h2>Work Experience</h2>
+                    <SectionTitle>Work Experience</SectionTitle>
                     <WorkExp description={"Junior Web Developer"}
+                             time={"Full time"}
                              build={"Dr. Rajkumar’s Learning App"}
                              map={"Bengaluru"}
                              calendar={"Sep 2021 - Dec 2021"}/>
                     <WorkExp description={"Web Development Intern"}
+                             time={"Internship"}
                              build={"IonPixelz Web Solutions"}
                              map={"Bengaluru"}
                              calendar={"Sep 2021 - Dec 2021"}/>
                     <WorkExp description={"SEO / SEM Specialist"}
+                             time={"Internship"}
                              build={"HAAPS"}
                              map={"Bengaluru"}
                              calendar={"Sep 2021 - Dec 2021"}/>
 
-                    <h2>Educations</h2>
+                    <SectionTitle>Educations</SectionTitle>
                     <Education
                         description={"Bachelor in Electronics & Communication"}
+                        time={"Full time"}
                         build={"Bangalore Institute of Technology"}
                         calendar={"Aug 2015 - Dec 2020"}/>
-                </AboutContainer>
-                    <Elem>
-                        <Icon iconId={"elem"} width={"621"} height={"1019"} viewBox={"0 0 621 1019"}/>
-                    </Elem>
+                </AboutWrapper>
+                <Icon iconId={"elem"} width={"1019"} height={"1019"} viewBox={"0 0 1019 1019"}/>
             </Container>
         </StyledAboutWorkEducation>
     );
 };
 
 const StyledAboutWorkEducation = styled.section`
-display: flex;
-    min-height: 100vh;
-    padding-top: 0;
+    display: flex;
+    min-height: 80vh;
+    position: relative;
+    overflow: clip;
+
+    ${Container} {
+        & > svg {
+            position: absolute;
+            top: -80px;
+            right: -420px;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        ${Container} {
+            & > svg {
+                top: -80px;
+                right: -520px;
+            }
+        }
+    }
+    @media screen and (max-width: 1100px) {
+        ${Container} {
+            & > svg {
+                top: -80px;
+                right: -600px;
+            }
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        ${Container} {
+            & > svg {
+                top: -80px;
+                right: -650px;
+            }
+        }
+    }
+    
+    
+    @media screen and (max-width: 992px) {
+        ${Container} {
+            & > svg {
+                display: none;
+                
+            }
+        }
+    }
+    
+
 `
-const AboutContainer = styled.div`
+const AboutWrapper = styled.div`
     max-width: 710px;
     width: 100%;
     height: 100%;
-    
-    h2 {
-        padding: 30px;
+    ${SectionTitle}{
+        text-align: left;
+        @media screen and (max-width: 768px) {
+            font-size: 4rem;
+        }
+        @media screen and (max-width: 450px) {
+            font-size: 2.5rem;
+        }
     }
-    
-    position: relative;
-    z-index: 0;
-`
-
-const Elem = styled.div`
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 836px;
-    height: 836px;
-    transform: translateX(358px) translateY(650px) rotate(15deg);
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    h2 {
+        padding: 30px 30px 10px 0;
+        font-weight: 700;
+        font-size: 4.2rem;
+        line-height: 1.2;
+        color: ${theme.colors.color1};
+    }
+    @media screen and (max-width: 992px) {
+        max-width: 100%;
+    }
 `
 

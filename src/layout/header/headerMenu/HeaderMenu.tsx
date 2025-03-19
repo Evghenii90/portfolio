@@ -1,18 +1,30 @@
 import styled from "styled-components";
 import {theme} from "../../../components/styles/Theme.tsx";
+import {Link} from "react-scroll";
+
+const items = [
+    {title: "Home", href: "home"},
+    {title: "About", href: "about"},
+    {title: "Tech Stack", href: "tech"},
+    {title: "Projects", href: "projects"},
+    {title: "Contact", href: "contact"}
+]
+export const HeaderMenu = () => {
 
 
-export const HeaderMenu = (props: { menuItems: Array<string> }) => {
     return (
         <StyledHeaderMenu>
             <ul>
-                {props.menuItems.map((item, index) => {
+                {items.map((item, index) => {
                     return <ListItem key={index}>
-                        <Link href="">
-                            {item}
-                            <Mask><span>{item}</span></Mask>
-                            <Mask><span>{item}</span></Mask>
-                        </Link>
+                        <NavLink activeClass="active"
+                                 to={item.href}
+                                 smooth={true}
+                                 spy={true}
+                                 offset={-130}
+                        >
+                            {item.title}
+                        </NavLink>
                     </ListItem>
                 })}
             </ul>
@@ -21,69 +33,52 @@ export const HeaderMenu = (props: { menuItems: Array<string> }) => {
 };
 
 const StyledHeaderMenu = styled.nav`
-    
+
     ul {
         display: flex;
         gap: 50px;
         justify-content: flex-end;
     }
-`
 
-const Link = styled.a`
-    font-family: "DM Sans", sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.3;
-    text-align: center;
-    color: transparent;
-    
-`
-const Mask = styled.span`
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    height: 50%;
-    overflow-y: hidden;
-    //outline: 1px solid red;
-    color: ${theme.colors.fonts.fontTitle};
-    &+&{
-        top:50%;
-        span{
-            display: inline-block;
-            transform: translateY(-50%);
-        }
+    @media ${theme.media.desktop} {
+        display: none;
     }
 `
+
 const ListItem = styled.li`
+    padding-bottom: 4px;
+
+`
+const NavLink = styled(Link)`
     position: relative;
+    display: block;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: #42446e;
+
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: -5px;
+        background: linear-gradient(90deg, #13b0f5 2.6%, #e70faa 100%);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 1s ease-out;
+    }
 
     &::before {
-        content: '';
-        display: inline-block;
-        height: 2px;
-        background-color: #851c83;
-
-        position: absolute;
-        top: 50%;
-        left: -10px;
-        right: -10px;
-        z-index: 1;
-        
-        transform: scale(0);
+        top: -5px;
+        transform-origin: left;
     }
 
-    &:hover {
-        &::before {
-            transform: scale(1);
-        }
-        
-        ${Mask} {
-            transform: skewX(12deg) translateX(5px);
-            color: ${theme.colors.fonts.font};
-            & + ${Mask} {
-                transform: skewX(12deg) translateX(-5px);
-            }
-        }
+    &:hover::after,
+    &:hover::before, &.active {
+        transform: scaleX(1);
     }
+
 `
