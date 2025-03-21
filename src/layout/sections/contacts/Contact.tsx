@@ -88,6 +88,10 @@ const Input = styled.input`
     margin-bottom: 10px;
     border: 2px solid #9f9b9b;
     border-radius: 5px;
+
+    &:hover, &:focus {
+        box-shadow: 1px 1px 100px #13b0f5;
+    }
 `;
 
 const TextArea = styled.textarea`
@@ -97,4 +101,7 @@ const TextArea = styled.textarea`
     margin-bottom: 20px;
     border: 2px solid #9f9b9b;
     border-radius: 5px;
+    &:hover, &:focus{
+        box-shadow: 1px 1px 100px #13b0f5;
+    }
 `;

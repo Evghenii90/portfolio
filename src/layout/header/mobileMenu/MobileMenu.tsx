@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../components/styles/Theme.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Link} from "react-scroll";
 
 const items = [
@@ -11,7 +11,20 @@ const items = [
     {title: "Contact", href: "contact"}
 ]
 export const MobileMenu = () => {
+
     const [menuIsOpen, setMenuIsOpen] = useState(false)
+    // Эффект для блокировки скролла
+    useEffect(() => {
+        if (menuIsOpen) {
+            document.body.style.overflow = "hidden"; // Блокируем скролл
+        } else {
+            document.body.style.overflow = "auto"; // Восстанавливаем скролл
+        }
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [menuIsOpen]);
+
     const onBurgerBtnClick = () => {
         setMenuIsOpen(!menuIsOpen);
     }

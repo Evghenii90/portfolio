@@ -31,6 +31,7 @@ export const Footer = () => {
                     </ContactStyled>
                     <InfoStyled>
                         <LinkIconFooter/>
+                        <span>© 2025 All rights reserved.</span>
                         <span>Designed and made by Evghenii Litvinenco with Love & Coffee</span>
                     </InfoStyled>
                 </FlexWrapper>
@@ -75,7 +76,8 @@ display: flex;
 
 const InfoStyled = styled.div`
     &>span{
-        display: inline-block;
+        display: flex;
+        justify-content: center;
         padding-top: 20px;
         font-size: 1rem;
         background: linear-gradient(90deg, #13b0f5 2.6%, #e70faa 100%);

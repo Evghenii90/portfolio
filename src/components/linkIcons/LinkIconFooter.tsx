@@ -44,7 +44,15 @@ const StyledLinkIconFooter = styled.div`
         color: #666666;
     }
 
-    & > a:hover {
-        color: #13b0f5;
+    & > a:first-child:hover {
+        color: #000000;
+    }
+
+    & > a:nth-child(2):hover {
+        color: #0088cc;
+    }
+    
+    & > a:last-child:hover {
+        color: #0a66c2;
     }
 `

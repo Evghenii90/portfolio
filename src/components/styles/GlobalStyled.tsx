@@ -38,6 +38,7 @@ export const GlobalStyled =createGlobalStyle`
     
     section {
         padding: 100px 0;
+        overflow: clip;
     }
     @media screen and (max-width: 992px) {
         section {

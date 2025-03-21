@@ -15,11 +15,11 @@ export const Education = (props: EducationPropsType) => {
                 <span>{props.time}</span>
 
                 <Link href="/">
-                    <Icon iconId={"build"} width={"12"} height={"12"} viewBox={"0 0 12 12"}/>
+                    <Icon iconId={"build"} width={"12"} height={"12"} viewBox={"0 -2 12 12"}/>
                     <a>{props.build}</a>
                 </Link>
                 <Link href="/">
-                    <Icon iconId={"calendar"} width={"12"} height={"12"} viewBox={"1 0 13 13"}/>
+                    <Icon iconId={"calendar"} width={"12"} height={"12"} viewBox={"2 -2 13 13"}/>
                     <a>{props.calendar}</a>
                 </Link>
 
@@ -32,6 +32,7 @@ const StyledEducation = styled.div`
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 30px 50px;
     position: relative;
+    
 
     & > span {
         font-weight: 600;
@@ -65,7 +66,6 @@ const StyledEducation = styled.div`
         font-size: 2rem;
         line-height: 1.4;
         color: ${theme.colors.color2};
-        white-space: nowrap;
     }
 
     a:nth-child(3) {
@@ -77,6 +77,20 @@ const StyledEducation = styled.div`
         justify-self: end;
         grid-column-start: 4;
         white-space: nowrap;
+    }
+    
+    @media screen and (max-width: 611px){
+        grid-auto-rows: 60px 50px;
+        &:before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: #9f9b9b;
+            display: inline-block;
+            position: absolute;
+            top: 90px;
+            right: 0;
+        }
     }
 
 `

@@ -121,6 +121,13 @@ const Link = styled.a`
         color: #000;
         text-decoration: underline;
     }
+    
+    &>a:hover{
+        background: linear-gradient(90deg, #13b0f5 2.6%, #e70faa 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
     @media screen and (max-width: 768px) {
         font-size: 1.2rem;
