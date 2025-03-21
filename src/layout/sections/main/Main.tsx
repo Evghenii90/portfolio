@@ -4,7 +4,7 @@ import photo from "./../../../assets/images/foto.webp"
 import {Container} from "../../../components/Container.tsx";
 import {theme} from "../../../components/styles/Theme.tsx";
 // import {Icon} from "../../../components/icons/Icon.tsx";
-// import Tilt from 'react-parallax-tilt';
+import Tilt from 'react-parallax-tilt';
 
 export const Main = () => {
     return (
@@ -18,16 +18,16 @@ export const Main = () => {
                     </TextContainer>
 
                         <PhotoContainer>
-                            {/*<Tilt*/}
-                            {/*    className="parallax-effect-img"*/}
-                            {/*    tiltMaxAngleX={40}*/}
-                            {/*    tiltMaxAngleY={40}*/}
-                            {/*    perspective={800}*/}
-                            {/*    transitionSpeed={1500}*/}
-                            {/*    scale={1.1}*/}
-                            {/*    gyroscope={true}>*/}
+                            <Tilt
+                                className="parallax-effect-img"
+                                tiltMaxAngleX={40}
+                                tiltMaxAngleY={40}
+                                perspective={800}
+                                transitionSpeed={1500}
+                                scale={1.1}
+                                gyroscope={true}>
                             <Photo src={photo} alt="photo"/>
-                            {/*</Tilt>*/}
+                            </Tilt>
                         </PhotoContainer>
 
                     {/*<Icon iconId={"abstract"} width={"628"} height={"628"} viewBox={"0 0 628 628"}/>*/}
@@ -72,6 +72,7 @@ const StyledMain = styled.section`
             flex-direction: column;
             justify-items: start;
             align-items: center;
+            //flex-direction: column-reverse;
         }
         padding-top: 150px;
     }
@@ -91,6 +92,8 @@ const TextContainer = styled.div`
     @media screen and (max-width: 992px) {
         & {
             padding-bottom: 40px;
+            padding-left: 30px;
+            align-self: flex-start;
         }
     }
     @media screen and (max-width: 450px) {
@@ -202,8 +205,8 @@ const Photo = styled.img`
     object-fit: cover;
     z-index: 1;
 
-    &:hover {
-        transform: scale3d(105%, 105%, 0.5);
-    }
+    //&:hover {
+    //    transform: scale3d(105%, 105%, 0.5);
+    //}
 
 `

@@ -13,6 +13,7 @@ export const GlobalStyled =createGlobalStyle`
         font-size: 10px;
     }
     body {
+        min-width: 500px;
         margin: 0;
         font-family:'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
